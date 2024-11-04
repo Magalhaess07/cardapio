@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🍽️ Cardápio Digital</h1>
+    <p>Escolha suas opções e adicione ao pedido!</p>
+  </header>
+
+  <section class="menu">
+    <h2>Entradas</h2>
+    <div class="menu-item">
+      <h3>Bruschetta Clássica</h3>
+      <p>R$ 19,90 - Pão italiano, tomate fresco, manjericão e azeite de oliva extra virgem.</p>
+      <button onclick="adicionarAoPedido('Bruschetta Clássica', 19.90)">Adicionar</button>
+    </div>
+    <div class="menu-item">
+      <h3>Ceviche de Peixe Branco</h3>
+      <p>R$ 29,90 - Peixe branco marinado no limão, cebola roxa, pimenta e coentro.</p>
+      <button onclick="adicionarAoPedido('Ceviche de Peixe Branco', 29.90)">Adicionar</button>
+    </div>
+    <!-- Adicione mais itens conforme necessário -->
+  </section>
+
+  <section class="menu">
+    <h2>Massas</h2>
+    <div class="menu-item">
+      <h3>Spaghetti ao Molho Pomodoro</h3>
+      <p>R$ 36,90 - Espaguete com molho de tomate fresco e manjericão.</p>
+      <button onclick="adicionarAoPedido('Spaghetti ao Molho Pomodoro', 36.90)">Adicionar</button>
+    </div>
+    <div class="menu-item">
+      <h3>Fettuccine Alfredo</h3>
+      <p>R$ 42,90 - Fettuccine cremoso com molho branco e parmesão.</p>
+      <button onclick="adicionarAoPedido('Fettuccine Alfredo', 42.90)">Adicionar</button>
+    </div>
+    <!-- Adicione mais itens conforme necessário -->
+  </section>
+
+  <section class="pedido">
+    <h2>Resumo do Pedido</h2>
+    <ul id="pedido-lista"></ul>
+    <p>Total: <span id="total">R$ 0,00</span></p>
+    <button id="finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

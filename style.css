@@ -1,0 +1,87 @@
+/* Resetando algumas propriedades padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    color: #d64c3d;
+  }
+  
+  .menu {
+    margin-bottom: 30px;
+  }
+  
+  .menu h2 {
+    font-size: 1.8em;
+    color: #d64c3d;
+    margin-bottom: 10px;
+  }
+  
+  .menu-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+  
+  .menu-item h3 {
+    font-size: 1.4em;
+    color: #333;
+  }
+  
+  .menu-item p {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  button {
+    background-color: #d64c3d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #c43a2f;
+  }
+  
+  .pedido {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pedido ul {
+    list-style-type: none;
+  }
+  
+  .pedido ul li {
+    margin-bottom: 10px;
+  }
+  
+  #total {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #d64c3d;
+  }
+  
