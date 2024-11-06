@@ -1,37 +1,25 @@
-let pedido = [];
-let total = 0;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
 
-function adicionarAoPedido(nome, preco) {
-    pedido.push({ nome, preco });
-    total += preco;
+// Sua configuração do Firebase
+const firebaseConfig = {
+    apiKey: "SUA_API_KEY",
+    authDomain: "SEU_PROJECT.firebaseapp.com",
+    projectId: "SEU_PROJECT_ID",
+    storageBucket: "SEU_BUCKET.appspot.com",
+    messagingSenderId: "SUA_ID",
+    appId: "SEU_APP_ID"
+};
 
-    atualizarPedido();
-    document.getElementById("total").innerText = `R$ ${total.toFixed(2)}`;
-    alert(`${nome} adicionado ao pedido!`);
-}
+// Inicializando Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-function atualizarPedido() {
-    const listaPedido = document.getElementById("pedido-lista");
-    listaPedido.innerHTML = ""; // Limpa a lista antes de atualizar
-
-    pedido.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
-        listaPedido.appendChild(li);
-    });
-}
-
-function finalizarPedido() {
-    if (pedido.length === 0) {
-        alert("Por favor, adicione itens ao pedido antes de finalizar.");
-        return;
+async function salvarPedido(pedido) {
+    try {
+        const docRef = await addDoc(collection(db, "pedidos"), pedido);
+        console.log("Pedido registrado com sucesso: ", docRef.id);
+    } catch (e) {
+        console.error("Erro ao registrar pedido: ", e);
     }
-
-    const resumo = pedido.map(item => `${item.nome} - R$ ${item.preco.toFixed(2)}`).join('\n');
-    alert(`Seu pedido foi finalizado com sucesso!\n\nResumo:\n${resumo}\nTotal: R$ ${total.toFixed(2)}`);
-    
-    pedido = [];
-    total = 0;
-    atualizarPedido();
-    document.getElementById("total").innerText = `R$ 0,00`;
 }

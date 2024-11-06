@@ -1,170 +1,106 @@
+/* Estilo geral */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos de layout */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 header {
+    background-color: #4CAF50;
     text-align: center;
-    padding: 40px 20px;
-    background-color: #d64c3d;
+    padding: 20px;
     color: white;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-nav {
-    background: #343a40;
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background 0.3s;
-}
-
-nav ul li a:hover {
-    background: #d64c3d;
-    border-radius: 5px;
-}
-
-.menu-section {
-    padding: 20px;
-    margin: 20px 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.menu-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #d64c3d;
-}
-
-.menu-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 15px;
-}
-
-.menu-item img {
-    width: 100%;
+.logo {
+    width: 100px;
     height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s;
 }
 
-.menu-item img:hover {
+/* Estilo do cardápio */
+.category {
+    margin: 30px 10%;
+}
+
+.category h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.item {
+    display: inline-block;
+    width: 150px;
+    margin: 15px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
     transform: scale(1.05);
 }
 
-.menu-item h3 {
+.item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.item p {
+    font-size: 1rem;
     margin: 10px 0;
 }
 
-.menu-item p {
-    margin: 5px 0;
-}
-
-button {
-    background-color: #d64c3d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #c43a2f;
-}
-
-.pedido {
+/* Carrinho */
+#carrinho {
+    background-color: #fff;
     padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 20px;
-}
-
-.pedido h2 {
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.pedido ul {
-    list-style-type: none;
-    padding: 0;
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-.pedido ul li {
-    margin: 5px 0;
-}
-
-#total {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #d64c3d;
+button:hover {
+    background-color: #45a049;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #343a40;
+    margin-top: 50px;
+    background-color: #333;
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.menu-section {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.menu-item {
-    transition: transform 0.3s;
-}
-
-.menu-item:hover {
-    transform: scale(1.05);
-}
-
-button {
-    transition: background 0.3s, transform 0.2s;
-}
-
-button:hover {
-    background-color: #c43a2f;
-    transform: translateY(-2px);
+    padding: 10px;
 }
